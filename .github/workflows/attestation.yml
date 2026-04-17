@@ -11,10 +11,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     # TODO: Add permissions needed for attestation
-    permissions: 
-      - id-token: write
-      - contents: read
-      - attestations: write
+    permissions:
+      id-token: write       #⬅️ needed for Sigstore OIDC signing
+      contents: read        #⬅️ read the repository
+      attestations: write 
     steps:
       - uses: actions/checkout@v4
 
